@@ -109,3 +109,28 @@ print(VH_image, 'VH_image');
 
 <img src="Fig4.png" />
 <h4 id="Sección4">Fig 4.Imágenes disponibles en las colecciones VV y VH en la consola.</h4>
+
+<p>Seguidamente se procede a crear un apilado de imágenes mensuales, utilizando el valor medio de todas las imágenes (<strong>“.mean ()”</strong>) para cada mes.</p>
+
+<p>Copie lo siguiente y pegue en el editor de código:</p> 
+
+```javascript
+// Create a 3 band stack by selecting from different periods (months)
+var im1 = ee.Image(collectionVV.filterDate('2020-01-15', '2020-02-28').mean());
+var im2 = ee.Image(collectionVV.filterDate('2020-03-01', '2020-03-30').mean());
+var im3 = ee.Image(collectionVV.filterDate('2020-06-01', '2020-06-30').mean());
+```
+<p>Proceder a realizar el mismo paso anterior para el caso de la polarización VH.</p>
+
+<p>Copie lo siguiente y pegue en el editor de código:</p> 
+
+```javascript
+// Create a 3 band stack by selecting from different periods (months)
+var im1_1 = ee.Image(collectionVH.filterDate('2020-01-15', '2020-02-28').mean());
+var im2_1 = ee.Image(collectionVH.filterDate('2020-03-01', '2020-03-30').mean());
+var im3_1 = ee.Image(collectionVH.filterDate('2020-06-01', '2020-06-30').mean());
+```
+<p>Seguidamente se procede a desplegar una imagen RGB con base a los apilados de imágenes anteriormente creados. Este paso le permite observar los cambios en los valores de retrodispersión para cada uno de los meses, pasando por el canal Rojo la imagen im1, por el Verde la imagen im2 y Azul la imagen im3, en este caso para la polarización VV. El comando de escritura en este caso es Map.addLayer el cual nos permite añadir al visualizador la capa de interés, entre corchetes (“{}”) se asignan los valores min y max o se deja en blanco para que se añada con los valores por defecto y finalmente luego de una, en comillas simples el nombre con el que aparecerá la capa en el administrador de capas.</p> 
+```javascript
+Map.addLayer(im1.addBands(im2).addBands(im3), {min: -25, max: 0}, 'VV stack1');
+```

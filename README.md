@@ -49,10 +49,10 @@ Como guía para crear una cuenta en GEE ingrese a:
 <li>Observar y monitorear los cambios temporales en cultivos de caña.</li>
 <li>Identificar ventajas y desventajas del uso de imágenes SAR en el monitoreo agrícola con GEE.</li></p>
 
-<p><h2 id="Sección3">3. 3. Interfaz de Google Earth Engine</h2></p>
+<p><h2 id="Sección3">3. Interfaz de Google Earth Engine</h2></p>
 
 
-<p>Para abrir el editor de código ingrese en:<p><a href="https://earthengine.google.com/" target="_blank">https://earthengine.google.com/</a></p>, y ubiquese en la opción  (Fig 1), luego seleccione Code Editor.</p> 
+<p>Para abrir el editor de código ingrese en: <a href="https://earthengine.google.com/" target="_blank">https://earthengine.google.com/</a>, y ubiquese en la opción  (Fig 1), luego seleccione Code Editor.</p> 
   
 <img src="Fig1.png" />
 <h4 id="Sección1">Fig 1. Acceso al code editor desde la página web de Google Earth Engine.</h4>

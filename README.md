@@ -73,6 +73,8 @@ Como guía para crear una cuenta en GEE ingrese a:
 
 <p>Proceda a llamar la colección de imágenes de GRD de Sentinel-1, tanto para las polarizaciones  VV, como VH. Utilice el siguiente fragmento de código para la polarización VV. Copie lo siguiente y pegue en el editor de código: </p> 
 
+
+```js
 // Get the VV collection.
 var collectionVV = ee.ImageCollection('COPERNICUS/S1_GRD')
     .filter(ee.Filter.eq('instrumentMode', 'IW'))
@@ -80,4 +82,4 @@ var collectionVV = ee.ImageCollection('COPERNICUS/S1_GRD')
     .filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'))
     .filterBounds(roi)
     .select(['VV']);
-
+```

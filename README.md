@@ -29,7 +29,7 @@ Como guía para crear una cuenta en GEE ingrese a:
 
 <iframe width="420" height="315" src="https://www.youtube.com//embed//E60J32Umqeo/"></iframe> 
 
-
+p><a href="https://www.youtube.com/watch?v=E60J32Umqeo " target="_blank">https://www.youtube.com/watch?v=E60J32Umqeo </a></p>
 <p><h2 id="Sección2">2. Introducción</h2></p>
 
 <p>El monitoreo de cultivos es una de las principales herramientas en agricultura, la estimación del área de cobertura, productividad, incidencia de enfermedades, evolución o cambios en la estructura de los cultivos...etc; estas actividades resultan fundamentales en términos de estudiar y mejorar la actividad agrícola (Mutanga & Kumar, 2019).</p>
@@ -74,7 +74,7 @@ Como guía para crear una cuenta en GEE ingrese a:
 <p>Proceda a llamar la colección de imágenes de GRD de Sentinel-1, tanto para las polarizaciones  VV, como VH. Utilice el siguiente fragmento de código para la polarización VV. Copie lo siguiente y pegue en el editor de código: </p> 
 
 
-
+```javascript
 // Get the VV collection.
 var collectionVV = ee.ImageCollection('COPERNICUS/S1_GRD')
     .filter(ee.Filter.eq('instrumentMode', 'IW'))
@@ -82,7 +82,7 @@ var collectionVV = ee.ImageCollection('COPERNICUS/S1_GRD')
     .filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'))
     .filterBounds(roi)
     .select(['VV']);
-
+```
 
 <p>Puede notar cómo se filtra la polarización (VV), así como el modo de adquisición y la órbita (Descendente), además, se delimita la zona de interés (roi). Lo anterior, puede editarse para utilizar la órbita descendente, así como la polarización VH. Ahora llame a la colección de imágenes en polarización VH. Copie lo siguiente y pegue en el editor de código:</p>
 

@@ -15,7 +15,7 @@
 <li><a href="#Sección3">3. Interfaz de Google Earth Engine</a></li>
 <li><a href="#Sección4">4. Procesamiento y análisis</a></li>
 <li><a href="#Sección5">5. Conclusiones y recomendaciones</a></li>
-<li><a href="#Sección7">6. Bibliografía</a></li></p> 
+<li><a href="#Sección6">6. Bibliografía</a></li></p> 
 
 <p><h2 id="Sección1">1. Prerrequisitos</h2></p>
 
@@ -240,7 +240,7 @@ Map.add(chart);
 <p>Ahora, analice el comportamiento temporal de los niveles de retrodispersión.</p>
 
 
-<p><h2 id="Sección6">5. Conclusiones y recomendaciones.</h2></p>
+<p><h2 id="Sección5">5. Conclusiones y recomendaciones.</h2></p>
 
 <p>La gran cantidad de repositorios de información que ofrece GEE, permite el análisis de múltiples fenómenos, sin recurrir a la descarga de información ni cargas computacionales de hardware y software elevadas.</p  
 

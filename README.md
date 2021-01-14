@@ -240,7 +240,7 @@ Map.add(chart);
 <p>Ahora, analice el comportamiento temporal de los niveles de retrodispersión.</p>
 
 
-<p><h2 id="Sección5">5. Conclusiones y recomendaciones.</h2></p>
+<p><h2 id="Sección6">5. Conclusiones y recomendaciones.</h2></p>
 
 <p>La gran cantidad de repositorios de información que ofrece GEE, permite el análisis de múltiples fenómenos, sin recurrir a la descarga de información ni cargas computacionales de hardware y software elevadas.</p  
 

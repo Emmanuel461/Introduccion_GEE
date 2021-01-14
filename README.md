@@ -28,6 +28,7 @@
 Como guía para crear una cuenta en GEE ingrese a: 
 
 <iframe width="420" height="315" src="https://www.youtube.com//embed//E60J32Umqeo/"></iframe> 
+p><a href=""https://www.youtube.com//embed//E60J32Umqeo/ " target="_blank">"https://www.youtube.com//embed//E60J32Umqeo/ </a></p>
 
 p><a href="https://www.youtube.com/watch?v=E60J32Umqeo " target="_blank">https://www.youtube.com/watch?v=E60J32Umqeo </a></p>
 <p><h2 id="Sección2">2. Introducción</h2></p>

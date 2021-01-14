@@ -15,7 +15,7 @@
 <li><a href="#Sección3">3. Interfaz de Google Earth Engine</a></li>
 <li><a href="#Sección4">4. Procesamiento y análisis</a></li>
 <li><a href="#Sección5">5. Conclusiones y recomendaciones</a></li>
-<li><a href="#Sección7">7. Bibliografía</a></li></p> 
+<li><a href="#Sección7">6. Bibliografía</a></li></p> 
 
 <p><h2 id="Sección1">1. Prerrequisitos</h2></p>
 
@@ -26,4 +26,23 @@
 <p>Esta plataforma utiliza en su editor de código el lenguaje de programación JAVA, aunque también posee una API Python vinculada al Google Drive.</p> 
 
 Como guía para crear una cuenta en GEE ingrese a: <p><a href="https://www.youtube.com/watch?v=E60J32Umqeo" target="_blank">https://www.youtube.com/watch?v=E60J32Umqeo</a></p>
+
+<p><h2 id="Sección2">2. Introducción</h2></p>
+
+<p>El monitoreo de cultivos es una de las principales herramientas en agricultura, la estimación del área de cobertura, productividad, incidencia de enfermedades, evolución o cambios en la estructura de los cultivos...etc; estas actividades resultan fundamentales en términos de estudiar y mejorar la actividad agrícola (Mutanga & Kumar, 2019).</p>
+
+<p>GEE es una plataforma en la nube que posee acceso de diferentes repositorios de información, caso de Landsat, MODIS, Sentinel, SoilGrids, SRTM, ALOS-Palsar, HydroSheds entre muchos otros que favorecen el monitoreo agrícola de forma gratuita y sin cargas computacionales elevadas.</p>
+
+<p>La detección remota con sensores ópticos requieren de observaciones con productos de buena calidad, libre de nubes o sombras de nubes para minimizar la confusión espectral de los datos (Shen et al., 2019), sin embargo, en zonas tropicales las coberturas nubosas son constantes y abundantes, su aplicación resulta limitada (Flores et al., 2019). Debido a este aspecto, se ha implementado el uso de la imágenes SAR, la cual despeja la limitante de la nubosidad y permite la obtención continua de información (Flores et al., 2019).</p>
+
+<p>En tanto los datos SAR son efectivos en este tipo de estudios, sin embargo, la descarga y pre-procesamiento de los datos en “crudo” directamente en el ordenador requiere de alta capacidad de procesamiento, elemento que puede ser omitido con el uso de GEE. El cual, provee información pre-procesada y lista para el análisis y monitoreo agrícola.</p> 
+
+<p>En este manual se muestra una metodología simple para el monitoreo de cultivos de caña, a partir de la interpretación y análisis espacio-temporal de los valores de retrodispersión.</p>
+
+<p><h3>2.1 Objetivos de aprendizaje:</h3></p>
+
+<p><li>Introducir al manejo de la interfaz de editor de código de GEE.</li>
+<li>Analizar los procesos de interacción de la señal SAR con la superficie terrestre.</li>
+<li>-	Observar y monitorear los cambios temporales en cultivos de caña.</li>
+<li>-	Identificar ventajas y desventajas del uso de imágenes SAR en el monitoreo agrícola con GEE.</li></p>
 

@@ -55,9 +55,29 @@ Como guía para crear una cuenta en GEE ingrese a:
 <p>Para abrir el editor de código ingrese en: <a href="https://earthengine.google.com/" target="_blank">https://earthengine.google.com/</a>, y ubiquese en la opción  (Fig 1), luego seleccione Code Editor.</p> 
   
 <img src="Fig1.png" />
-<h4 id="Sección1">Fig 1. Acceso al code editor desde la página web de Google Earth Engine.</h4>
+<h4 id="Sección3">Fig 1. Acceso al code editor desde la página web de Google Earth Engine.</h4>
 
+<p>Una vez hecho esto se le desplegará el editor de código de GEE, el cual se detalla en la Fig 2.</p> 
   
- 
+<img src="Fig2.png" />
+<h4 id="Sección3">Fig 2. Interfaz de editor de código GEE.</h4>
+
+<p>Es importante señalar que en la plataforma en “repositorio de código” en la sección de <strong>“Examples”</strong> puede encontrar una serie de códigos de ejemplo con diferentes tipos de datos de origen con los cuales puede experimentar y editar a conveniencia para diferentes aplicaciones.<p>
   
-  
+<p><h2 id="Sección4">4. Procesamiento y análisis</h2></p>
+
+<p>Primero selecciona un área de interés, para esto puede utilizar el administrador de geometrías, para esto puede seleccionar la opción de polígonos o puntos. En este caso, dibuje un rectángulo sobre el área a analizar. Una vez que lo dibuje, vaya a la casilla <strong>Geometry imports</strong> (Fig 3) y asígnele un nombre (roi).</p>
+
+<img src="Fig3.png" />
+<h4 id="Sección4">Fig 3. Seleccionar área de interés con administrador de geometrías.</h4>
+
+<p>Proceda a llamar la colección de imágenes de GRD de Sentinel-1, tanto para las polarizaciones  VV, como VH. Utilice el siguiente fragmento de código para la polarización VV. Copie lo siguiente y pegue en el editor de código: </p> 
+
+// Get the VV collection.
+var collectionVV = ee.ImageCollection('COPERNICUS/S1_GRD')
+    .filter(ee.Filter.eq('instrumentMode', 'IW'))
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+    .filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'))
+    .filterBounds(roi)
+    .select(['VV']);
+

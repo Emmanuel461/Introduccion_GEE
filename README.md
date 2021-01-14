@@ -25,7 +25,7 @@
 
 <p>Esta plataforma utiliza en su editor de código el lenguaje de programación JAVA, aunque también posee una API Python vinculada al Google Drive.</p> 
 
-Como guía para crear una cuenta en GEE ingrese a: 
+<p>Como guía para crear una cuenta en GEE ingrese a:</p> 
 
 
 <p><a href="https://www.youtube.com/watch?v=E60J32Umqeo" target="_blank">https://www.youtube.com/watch?v=E60J32Umqeo</a></p>

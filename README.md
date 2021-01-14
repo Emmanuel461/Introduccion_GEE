@@ -46,6 +46,6 @@ Como guía para crear una cuenta en GEE ingrese a:
 
 <p><li>Introducir al manejo de la interfaz de editor de código de GEE.</li>
 <li>Analizar los procesos de interacción de la señal SAR con la superficie terrestre.</li>
-<li>-	Observar y monitorear los cambios temporales en cultivos de caña.</li>
-<li>-	Identificar ventajas y desventajas del uso de imágenes SAR en el monitoreo agrícola con GEE.</li></p>
+<li>Observar y monitorear los cambios temporales en cultivos de caña.</li>
+<li>Identificar ventajas y desventajas del uso de imágenes SAR en el monitoreo agrícola con GEE.</li></p>
 

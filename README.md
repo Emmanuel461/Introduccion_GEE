@@ -31,6 +31,11 @@ Como guía para crear una cuenta en GEE ingrese a:
 p><a href=""https://www.youtube.com//embed//E60J32Umqeo/ " target="_blank">"https://www.youtube.com//embed//E60J32Umqeo/ </a></p>
 
 p><a href="https://www.youtube.com/watch?v=E60J32Umqeo " target="_blank">https://www.youtube.com/watch?v=E60J32Umqeo </a></p>
+
+<iframe width="420" height="315"
+src="https://www.youtube.com//embed//E60J32Umqeo/">
+</iframe>
+
 <p><h2 id="Sección2">2. Introducción</h2></p>
 
 <p>El monitoreo de cultivos es una de las principales herramientas en agricultura, la estimación del área de cobertura, productividad, incidencia de enfermedades, evolución o cambios en la estructura de los cultivos...etc; estas actividades resultan fundamentales en términos de estudiar y mejorar la actividad agrícola (Mutanga & Kumar, 2019).</p>

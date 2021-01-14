@@ -67,7 +67,7 @@ Como guía para crear una cuenta en GEE ingrese a:
   
 <p><h2 id="Sección4">4. Procesamiento y análisis</h2></p>
 
-<p>Primero selecciona un área de interés, para esto puede utilizar el administrador de geometrías, para esto puede seleccionar la opción de polígonos o puntos. En este caso, dibuje un rectángulo sobre el área a analizar. Una vez que lo dibuje, vaya a la casilla <strong>Geometry imports</strong> (Fig 3) y asígnele un nombre (roi).</p>
+<p>Primero selecciona un área de interés, para esto puede utilizar el administrador de geometrías, y puede seleccionar la opción de polígonos o puntos. En este caso, dibuje un rectángulo sobre el área a analizar. Una vez que lo dibuje, vaya a la casilla <strong>Geometry imports</strong> (Fig 3) y asígnele un nombre (roi).</p>
 
 <img src="Fig3.png" />
 <h4 id="Sección4">Fig 3. Seleccionar área de interés con administrador de geometrías.</h4>
@@ -96,3 +96,16 @@ var collectionVH = ee.ImageCollection('COPERNICUS/S1_GRD')
     .select(['VH'])
     .filterBounds(roi);
 ```
+<p>Una vez hecho, realizaremos un filtro para las fechas de interés, esto se realizará para cada colección de imágenes (VV y VH). Utilice el siguiente fragmento de código:</p>
+
+```javascript
+//Filter by date
+var VV_image = collectionVV.filterDate('2020-01-15', '2020-06-30');
+var VH_image = collectionVH.filterDate('2020-01-15', '2020-06-30');
+print(VV_image, 'VV_image');
+print(VH_image, 'VH_image');
+```
+<p>El comando print permite reflejar los resultados en la consola de GEE (Fig 4), en este caso la cantidad de imágenes disponibles para el área de interés en el periodo asignado.</p> 
+
+<img src="Fig4.png" />
+<h4 id="Sección4">Fig 4.Imágenes disponibles en las colecciones VV y VH en la consola.</h4>

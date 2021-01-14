@@ -83,3 +83,15 @@ var collectionVV = ee.ImageCollection('COPERNICUS/S1_GRD')
     .filterBounds(roi)
     .select(['VV']);
 ```
+
+<p>Puede notar cómo se filtra la polarización (VV), así como el modo de adquisición y la órbita (Descendente), además, se delimita la zona de interés (roi). Lo anterior, puede editarse para utilizar la órbita descendente, así como la polarización VH. Ahora llame a la colección de imágenes en polarización VH. Copie lo siguiente y pegue en el editor de código:</p>
+
+```js
+// Get the VH collection.
+var collectionVH = ee.ImageCollection('COPERNICUS/S1_GRD')
+    .filter(ee.Filter.eq('instrumentMode', 'IW'))
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+    .filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'))
+    .select(['VH'])
+    .filterBounds(roi);
+```

@@ -141,3 +141,7 @@ Map.addLayer(im1.addBands(im2).addBands(im3), {min: -25, max: 0}, 'VV stack1');
 ```javascript
 Map.addLayer(im1_1.addBands(im2_1).addBands(im3_1), {min: -25, max: 0}, 'VH stack2');
 ```
+<p>Una vez hecho esto en la pestaña Layers, se desplegará el apilado de imágenes en una imagen RGB tanto para VV como VH.</p>
+
+<img src="Fig5.png" />
+<h4 id="Sección4">Fig 5. Visualización de los apilados RGB.</h4>

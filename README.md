@@ -43,7 +43,7 @@ Como guía para crear una cuenta en GEE ingrese a:
 
 <p>En este manual se muestra una metodología simple para el monitoreo de cultivos de caña, a partir de la interpretación y análisis espacio-temporal de los valores de retrodispersión.</p>
 
-<p><h3>2.1 Objetivos de aprendizaje:</h3></p>
+<p><h3>2.1. Objetivos de aprendizaje:</h3></p>
 
 <p><li>Introducir al manejo de la interfaz de editor de código de GEE.</li>
 <li>Analizar los procesos de interacción de la señal SAR con la superficie terrestre.</li>

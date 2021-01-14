@@ -130,7 +130,7 @@ var im1_1 = ee.Image(collectionVH.filterDate('2020-01-15', '2020-02-28').mean())
 var im2_1 = ee.Image(collectionVH.filterDate('2020-03-01', '2020-03-30').mean());
 var im3_1 = ee.Image(collectionVH.filterDate('2020-06-01', '2020-06-30').mean());
 ```
-<p>Seguidamente se procede a desplegar una imagen RGB con base a los apilados de imágenes anteriormente creados. Este paso le permite observar los cambios en los valores de retrodispersión para cada uno de los meses, pasando por el canal Rojo la imagen im1, por el Verde la imagen im2 y Azul la imagen im3, en este caso para la polarización VV. El comando de escritura en este caso es Map.addLayer el cual nos permite añadir al visualizador la capa de interés, entre corchetes (“{}”) se asignan los valores min y max o se deja en blanco para que se añada con los valores por defecto y finalmente luego de una, en comillas simples el nombre con el que aparecerá la capa en el administrador de capas.</p> 
+<p>Seguidamente se procede a desplegar una imagen RGB con base a los apilados de imágenes anteriormente creados. Este paso le permite observar los cambios en los valores de retrodispersión para cada uno de los meses, pasando por el canal Rojo la imagen im1, por el Verde la imagen im2 y Azul la imagen im3, en este caso para la polarización VV. El comando de escritura es Map.addLayer el cual nos permite añadir al visualizador la capa de interés, entre corchetes (“{}”) se asignan los valores min y max o se deja en blanco para que se añada con los valores por defecto y finalmente luego de una, en comillas simples el nombre con el que aparecerá la capa en el administrador de capas.</p> 
 
 ```javascript
 Map.addLayer(im1.addBands(im2).addBands(im3), {min: -25, max: 0}, 'VV stack1');
@@ -145,3 +145,5 @@ Map.addLayer(im1_1.addBands(im2_1).addBands(im3_1), {min: -25, max: 0}, 'VH stac
 
 <img src="Fig5.png" />
 <h4 id="Sección4">Fig 5. Visualización de los apilados RGB.</h4>
+
+

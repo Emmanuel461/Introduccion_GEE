@@ -143,7 +143,118 @@ Map.addLayer(im1_1.addBands(im2_1).addBands(im3_1), {min: -25, max: 0}, 'VH stac
 ```
 <p>Una vez hecho esto en la pestaña Layers, se desplegará el apilado de imágenes en una imagen RGB tanto para VV como VH.</p>
 
-<img src="Fig5.png" />
+<img src="Fig5.png"/>
 <h4 id="Sección4">Fig 5. Visualización de los apilados RGB.</h4>
 
+<p>Cada uno de estos apilados está conformado por tres imágenes (im1, im2 e im3), cada una se puede visualizar de forma individual. Para hacer esto, dirijase a la pestaña Layers y elija alguno de los “Stack” disponibles, con la opción (<img src="role.png"/> ), una vez ahí se habilitará lo siguiente:</p>
+
+<img src="Fig6.png"/>
+<h4 id="Sección4">Fig 6. Parámetros de visualización en pestaña Layers (3 bands (RGB)).</h4>
+
+<p>Cambie el parámetro 3 bands (RGB) a 1 band (Grayscale), una vez acá puede elegir cada una de las imágenes del apilado.</p>
+
+<img src="Fig7.png"/>
+<h4 id="Sección4">Fig 7. Parámetros de visualización en pestaña Layers (1 band (Grayscale)).</h4>
+
+
+<p>Analice cada una de las imágenes en relación a su retrodispersión. Para esto puede utilizar la pestaña Inspector.</p>
+
+<img src="Fig8.png"/>
+<h4 id="Sección4">Fig 8. Inspector de GEE.</h4>
+
+<p>Para usarlo simplemente debe dirigirse a algún sitio de la imagen desplegada y presionar click izquierdo, inmediatamente se desplegará una serie de información relacionada con los niveles de retrodispersión en las distintas imágenes (Fig 9).</p>
+
+<img src="Fig9.png"/>
+<h4 id="Sección4">Fig 9. Niveles de retrodispersión para un sitio, herramienta Inspector.</h4>
+
+<p>También se puede visualizar el comportamiento temporal de los niveles de retrodispersión del área de estudio (roi). Utilice el siguiente fragmento de código.</p>
+
+```javascript
+// Get the VV and VH collection for chart plot.
+var collectionVH_VV = ee.ImageCollection('COPERNICUS/S1_GRD')
+    .filter(ee.Filter.eq('instrumentMode', 'IW'))
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+    .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+    .filter(ee.Filter.eq('orbitProperties_pass', 'DESCENDING'))
+    .select(['VV','VH'])
+    .filterBounds(roi)
+```
+<p>Para crear el gráfico debe ejecutar la siguiente línea de código, donde se añade la colección de imágenes, y se detallan los elementos que va a poseer el gráfico.</p>
+
+```javascript
+// Create an image time series chart for ROI of change in the all time collection
+// Plot a time series at a ROI
+var chart1 = ui.Chart.image.series(collectionVH_VV, roi)
+    .setChartType('ScatterChart')
+    .setOptions({
+      title: 'Sentinel 1 time series at ROI',
+      trendlines: {0: {
+        color: 'CC0000'
+      }},
+      lineWidth: 1,
+      pointSize: 3,
+    });
+```
+<p>Una vez ejecutado este código, debemos utilizar la función <strong> print ()</strong> para visualizar el gráfico en la consola.</p>
+
+```javascript
+print(chart1)
+```
+
+<img src="Fig10.png"/>
+<h4 id="Sección4">Fig 10. Gráfico de retrodispersión en la consola de GEE para el área de estudio.</h4>
+
+<p>Para analizar una parcela o un valor de píxel en específico, se debe primero digitalizar el punto o la parcela del área de interés y seguidamente ejecutar el siguiente código para preparar los datos del gráfico. Utilice el administrador de geometrías, para esto puede seleccionar la opción de polígonos o puntos. En este caso, dibuje un punto sobre el área a analizar. Una vez que lo dibuje, vaya a la casilla <strong>Geometry imports</strong> y asígnele un nombre (point).</p>
+
+```javascript
+// Create an image time series chart for one point of change in the all time collection
+// Plot a time series at a point.
+
+var chart = ui.Chart.image.series({
+  imageCollection: collectionVV,
+  region: point,
+  reducer: ee.Reducer.mean(),
+  scale: 200
+});
+```
+<p>Una vez preparados los datos de entrada, se detallan los elementos del gráfico, la ubicación y dimensiones. En este caso visualizamos el gráfico en el visualizador de capas <strong>(Layers)</strong>.</p>
+
+```javascript
+// Add the chart to the map. 
+chart.style().set({
+  position: 'bottom-right',
+  width: '500px',
+  height: '300px'
+});
+```
+
+<p>Para visualizar el gráfico ejecute <strong>Map.add(chart)</strong>:</p>
+
+```javascript
+Map.add(chart);
+```
+
+<img src="Fig11.png"/>
+<h4 id="Sección4">Fig 11. Gráfico de retrodispersión en la consola de GEE para un punto.</h4>
+
+<p>Ahora, analice el comportamiento temporal de los niveles de retrodispersión.</p>
+
+
+<p><h2 id="Sección5">5. Conclusiones y recomendaciones.</h2></p>
+
+<p>La gran cantidad de repositorios de información que ofrece GEE, permite el análisis de múltiples fenómenos, sin recurrir a la descarga de información ni cargas computacionales de hardware y software elevadas.</p  
+
+<p>La disponibilidad de imágenes SAR pre-procesadas reduce los tiempos de ejecución. Además de favorecer la ejecución de grandes conjuntos de datos en un mismo proceso (Big data).</p  
+  
+<p>En relación a los diferentes procesos disponibles, la plataforma de GEE posee la capacidad de ejecución de una gran variedad de procesos que permiten el monitoreo no únicamente agrícola sino de diferentes elementos como el bosque, ciudades, cuerpos de agua, inundaciones entre muchos otros que hacen de ella una herramienta muy potente.</p 
+
+<p>Por otro lado, el editor de código ofrece gran versatilidad al ejecutar procesos, no obstante, requiere conocimientos básicos en programación.</p
+
+<p><h2 id="Sección6">6. Bibliografía.</h2></p>
+
+<p>Flores, A. I., Herndon, K. E., Bahadur Thapa, R., & Cherrington, E. (Eds.). (2019). The Synthetic Aperture Radar (SAR) Handbook: Comprehensive Methodologies for Forest Monitoring and Biomass Estimation. <a href="https://doi.org/10.25966/nr2c-s697" target="_blank">https://doi.org/10.25966/nr2c-s697</a></p>
+
+<p>Mutanga, O., & Kumar, L. (2019). Google Earth Engine Applications. Remote Sensing, 11(5), 591. <a href="https://doi.org/10.3390/rs11050591" target="_blank">https://doi.org/10.3390/rs11050591</a></p></p>
+
+<p>Shen, W., Li, M., Huang, C., Tao, X., Li, S., & Wei, A. (2019). Mapping annual forest change due to afforestation in Guangdong Province of China using active and passive remote sensing data. Remote Sensing, 11(5), 1-21. <a href="https://doi.org/10.3390/rs11050490" target="_blank">https://doi.org/10.3390/rs11050490</a></p>
 

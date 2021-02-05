@@ -67,7 +67,7 @@
   
 <p><h2 id="Sección4">4. Procesamiento y análisis</h2></p>
 
-<p> <Strong><h3>Nota:</h3></Strong> El código ejecutado en el presente manual se puede acceder por medio del siguiente link:<a href="https://code.earthengine.google.com/51fa8a89e12bdc92b25e2822d5a82d1d" target="_blank">https://code.earthengine.google.com/51fa8a89e12bdc92b25e2822d5a82d1d</a><p>
+<p> <Strong><h3>Nota:</h3></Strong> El código ejecutado en el presente manual se puede acceder por medio del siguiente link: <a href="https://code.earthengine.google.com/51fa8a89e12bdc92b25e2822d5a82d1d" target="_blank">https://code.earthengine.google.com/51fa8a89e12bdc92b25e2822d5a82d1d</a><p>
 
 
 <p>Primero selecciona un área de interés, para esto puede utilizar el administrador de geometrías, y puede seleccionar la opción de polígonos o puntos. En este caso, dibuje un rectángulo sobre el área a analizar. Una vez que lo dibuje, vaya a la casilla <strong>Geometry imports</strong> (Fig 3) y asígnele un nombre (roi).</p>
